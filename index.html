@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/icono.ico">
+    <title>FCVH - SITIO OFICIAL</title>
+    <link rel="stylesheet" href="css/stilo.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js">
+    </script>
+    <script src="https://code.angularjs.org/1.6.6/angular-route.min.js"></script>
+    <script src="js/rutas.js"></script>
+</head>
+<body ng-app="fcvhapp" onload="start()">
+
+    <!--BARRA DE NAVEGACION-->
+    <nav ng-controller="MenuCtrl" class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <a class="navbar-brand" href="#">F.C.V.H.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <!--NG-REPEAT PARA MENU DE NAVEGACION-->
+                <li ng-repeat="item in items" ng-if="item.inmenu" class="nav-item"><a class="nav-link" href="#{{item.route}}">{{item.title}}</a></li>
+
+            </ul>
+            <hr class="md-hidden">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <!-- Large modal -->
+                    <button class="btn btn-default" data-toggle="modal" data-target=".bd-example-modal-lg">Precios para nuevos socios</button>
+
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <form></form>
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    
+                </ul>
+            </div>
+        </nav>
+        
+        
+
+        <!-- CABECERA DE LA PAGINA-->
+        <div class="jumbotron">
+            <div class="container-fluid text-center">
+                <h4 class="display-4"><strong>SITIO WEB OFICIAL</strong></h4>
+                <img class="rounded img-fluid inline-block" src="img/escudo-viejo.jpg">
+                <img class="rounded img-fluid" src="img/escudo2.png">
+            </div>
+        </div>
+
+        <div class="container">
+            <!--CONTENEDORA-->
+
+            <div class="row" id="contenido">
+                <div class="col-md-7">
+                    <!--     -->
+                    <div ng-view></div>
+
+                </div>
+                <div class="col-md-5">
+                    <div ng-include src="'template/slider.html'"></div><br>
+                    <div ng-include src=" 'template/sidebar.html' "></div>
+
+
+
+
+
+                </div>
+            </div>
+
+            <section id="sponsor">
+                <ul>
+                    <li><img src="img/sponsor/claro.png" alt=""></li>
+                    <li><img src="img/sponsor/mani1.png" alt=""></li>
+                    <li><img src="img/sponsor/adidas.jpg" alt=""></li>
+                    <li><img src="img/sponsor/gatorade.jpg" alt=""></li>
+                </ul>
+            </section>
+        </div>        
+        <!-- /.container -->
+
+        <hr>
+
+
+        <!--FOOTER-->
+        <div ng-include src="'template/pie.html'"></div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script>
+        (function() {
+            'use strict'
+
+            if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                var msViewportStyle = document.createElement('style')
+                msViewportStyle.appendChild(
+                    document.createTextNode(
+                        '@-ms-viewport{width:auto!important}'
+                        )
+                    )
+                document.head.appendChild(msViewportStyle)
+            }
+
+        }())
+    </script>
+</body>
+
+</html>
